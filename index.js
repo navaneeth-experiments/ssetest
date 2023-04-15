@@ -239,7 +239,15 @@ app.post('/ad', (req, res) => {
 
     config.unshift(ad);
 
-    schedule.scheduleJob(shceduledTime, function () {
+    const rule = new schedule.RecurrenceRule();
+    rule.year = year;
+    rule.month = month;
+    rule.date = date;
+    rule.hour = hours;
+    rule.minute = minutes;
+    rule.second = seconds;
+    rule.tz = 'Asia/Kolkata';
+    schedule.scheduleJob(rule, function () {
       emitter.emit('ad', config);
     });
 
