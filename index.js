@@ -11,7 +11,7 @@ const emitter = new EventEmitter();
 
 // import { nanoid } from 'nanoid';
 
-const carousels = [
+let carousels = [
   {
     _id: 'nW6rE63',
     items: [
