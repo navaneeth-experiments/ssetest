@@ -274,8 +274,27 @@ app.get('/carousel/:id', (req, res) => {
 app.put('/remove/:id', (req, res) => {
   const { id } = req.params;
   const configs = config.filter((item) => item._id !== id);
-  emitter.emit('ad', configs);
-  res.status(200).json({ msg: 'ad removed successfully', configs });
+  config = configs;
+  emitter.emit('ad', config);
+  res.status(200).json({ msg: 'ad removed successfully', config });
+});
+app.put('/removeall', (req, res) => {
+  config = [
+    {
+      _id: 'nW6rdE63',
+      rank: 1,
+      meta: {
+        type: 'carousel',
+        sType: 'main',
+        columns: 12,
+        title: 'Main',
+        sts: 1,
+        _id: 'nW6rE63',
+      },
+    },
+  ];
+  emitter.emit('ad', config);
+  res.status(200).json({ msg: 'removed all' });
 });
 
 app.get('/add', (req, res) => {});
