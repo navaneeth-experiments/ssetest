@@ -271,6 +271,13 @@ app.get('/carousel/:id', (req, res) => {
   res.status(200).json(carousel);
 });
 
+app.put('/remove/:id', (req, res) => {
+  const { id } = req.params;
+  const configs = config.filter((item) => item._id !== id);
+  emitter.emit('ad', configs);
+  res.status(200).json({ msg: 'ad removed successfully', configs });
+});
+
 app.get('/add', (req, res) => {});
 app.get('/stream', (req, res) => {
   sendEvent(req, res);
