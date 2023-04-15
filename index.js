@@ -117,7 +117,7 @@ let carousels = [
 //     },
 //   ],
 // ];
-const config = [
+let config = [
   {
     _id: 'nW6rdE63',
     rank: 1,
