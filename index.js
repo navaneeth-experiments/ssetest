@@ -16,10 +16,13 @@ let carousels = [
     _id: 'nW6rE63',
     items: [
       {
-        img: 'l.png',
+        img: 'l.webp',
       },
       {
-        img: 'k.png',
+        img: 'k.webp',
+      },
+      {
+        img: 'main12.webp',
       },
       {
         img: 'carouselImage3.jpg',
